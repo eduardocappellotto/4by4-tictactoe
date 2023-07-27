@@ -24,7 +24,7 @@ export default class WordSearch {
 
       // Check if the word matches in the specified direction
       for (let i = 0; i < word.length; i++) {
-        if (this.grid[row + i * dr][col + i * dc] !== word[i]) {
+        if (this.letterGrid[row + i * dr][col + i * dc] !== word[i]) {
           return false;
         }
       }
@@ -51,8 +51,8 @@ export default class WordSearch {
 
           if (checkWordInDirection(r, c, word, [0, -1])) {
             found = true;
-            start = [r, c - word.length + 1];
-            end = [r, c];
+            start = [r, c];
+            end = [r, c - word.length + 1];
             break;
           }
 
@@ -65,8 +65,8 @@ export default class WordSearch {
 
           if (checkWordInDirection(r, c, word, [-1, 0])) {
             found = true;
-            start = [r - word.length + 1, c];
-            end = [r, c];
+            start = [r, c];
+            end = [r - word.length + 1, c];
             break;
           }
         }
@@ -77,6 +77,8 @@ export default class WordSearch {
       }
 
       if (found) {
+        start[0]++; start[1]++;
+        end[0]++; end[1]++;
         results[word] = { start, end };
       } else {
         results[word] = undefined;
