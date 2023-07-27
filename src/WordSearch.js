@@ -4,8 +4,8 @@ export default class WordSearch {
   }
 
   find(words) {
-    const numRows = this.grid.length;
-    const numCols = this.grid[0].length;
+    const numRows = this.letterGrid.length;
+    const numCols = this.letterGrid[0].length;
 
     // Helper function to check if a word can be found starting from a given position in a given direction
     const checkWordInDirection = (row, col, word, direction) => {
