@@ -21,25 +21,25 @@ export default class WordSearch {
         for(let c= 0; c < colsCount; c++){
         // Will check on every direction
 
-        if(checkWordInDirection(r, c, word, [0,1])){
+        if(this.checkWordInDirection(r, c, word, [0,1])){
           found = true;
           start = [r, c];
           end = [r, c + word.length -1]
           break;
         }
-        if(checkWordInDirection(r, c, word, [0,-1])){
+        if(this.checkWordInDirection(r, c, word, [0,-1])){
           found = true;
           start = [r, c - word.length -1]
           end =  [r, c];
           break;
         }
-        if(checkWordInDirection(r, c, word, [1,0])){
+        if(this.checkWordInDirection(r, c, word, [1,0])){
           found = true;
           start =[r, c]; 
           end = [r + word.length - 1, c];
           break;
         }
-        if(checkWordInDirection(r, c, word, [-1,0])){
+        if(this.checkWordInDirection(r, c, word, [-1,0])){
           found = true;
          start = [r - word.length +1, c];
           end = [r, c];
