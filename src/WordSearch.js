@@ -64,8 +64,8 @@ export default class WordSearch {
   };
 
   checkWordInDirection(row, col, word, direction){
-    let dR = direction[0]
-    let dC = direction[1]
+    let dr = direction[0]
+    let dc = direction[1]
 
     // Checks if the word can fit
     if(
